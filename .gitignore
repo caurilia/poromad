@@ -18,3 +18,9 @@
 .idea/workspace.xml
 
 .idea/uiDesigner.xml
+
+wp-config.php
+
+.htaccess
+
+.htpasswd
