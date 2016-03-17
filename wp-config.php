@@ -89,4 +89,4 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Imposta le variabili di WordPress ed include i file. */
-require_once(ABSPATH . 'wp-settings.php'); 
+require_once(ABSPATH . 'wp-settings.php');
