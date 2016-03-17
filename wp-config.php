@@ -1,4 +1,3 @@
-@@ -1,91 +0,0 @@
 <?php
 /**
  * Il file base di configurazione di WordPress.
