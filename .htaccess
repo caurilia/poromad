@@ -1,0 +1,48 @@
+AuthType Basic
+AuthName "poromad"
+AuthUserFile /web/htdocs/www.poromad.it/home//.htpasswd
+require valid-user
+
+RewriteEngine On
+
+#DirectoryIndex detect.php
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+
+ErrorDocument 404  /index.php
+
+RewriteRule logout.html  /index.php?azione=logout [L]
+RewriteRule ^sitemap/([^/]+)\.xml$  /sitemap.php?lingua=$1 [L]
+RewriteRule ^rss/feed.xml$  /rss.php [L]
+
+RewriteRule ^([^/]+)\.html$  /index.php?lingua=$1 [L]
+RewriteRule ^([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=$2 [L]
+
+RewriteRule ^([^/]+)/home/([^/]+)\.html$  /index.php?lingua=$1&anno=$2 [L]
+RewriteRule ^([^/]+)/home/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&anno=$2&luogo=$3 [L]
+
+RewriteRule ^([^/]+)/programma/([^/]+)\.html$  /index.php?lingua=$1&pagina=programma&anno=$2 [L]
+RewriteRule ^([^/]+)/programma/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=programma&anno=$2&luogo=$3 [L]
+RewriteRule ^([^/]+)/programma/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=programma&anno=$2&luogo=$3&evento=$4 [L]
+RewriteRule ^([^/]+)/programma/([^/]+)/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=programma&anno=$2&luogo=$3&evento=$4&programma=$5 [L]
+RewriteRule ^([^/]+)/programme/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2 [L]
+RewriteRule ^([^/]+)/programme/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2&luogo=$3 [L]
+RewriteRule ^([^/]+)/programme/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2&luogo=$3&evento=$4 [L]
+RewriteRule ^([^/]+)/programme/([^/]+)/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2&luogo=$3&evento=$4&programma=$5 [L]
+RewriteRule ^([^/]+)/program/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2 [L]
+RewriteRule ^([^/]+)/program/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2&luogo=$3 [L]
+RewriteRule ^([^/]+)/program/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2&luogo=$3&evento=$4 [L]
+RewriteRule ^([^/]+)/program/([^/]+)/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=program&anno=$2&luogo=$3&evento=$4&programma=$5 [L]
+
+RewriteRule ^([^/]+)/media/([^/]+)\.html$  /index.php?lingua=$1&pagina=media&anno=$2 [L]
+RewriteRule ^([^/]+)/news/([^/]+)\.html$  /index.php?lingua=$1&pagina=news&news=$2 [L]
+
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/review/([^/]+)\.html$  /index.php?lingua=$1&pagina=$2&anno=$3&rassegna=$4 [L]
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/release/([^/]+)\.html$  /index.php?lingua=$1&pagina=$2&anno=$3&comunicati=$4 [L]
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=$2&anno=$3 [L]
+
+RewriteRule ^([^/]+)/partner/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=partner&anno=$2&luogo=$3 [L]
+RewriteRule ^([^/]+)/partner/([^/]+)/([^/]+)/([^/]+)\.html$  /index.php?lingua=$1&pagina=partner&anno=$2&luogo=$3&evento=$4 [L]
+
